@@ -6,8 +6,7 @@ static int min_width = 400;  /* minimum width when centered */
 static int fuzzy = 1;        /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-            "FiraCode Nerd Font:size=14:antialias=true:autohint=true",
-            "Hack:size=8:antialias=true:autohint=true",
+            "Hack Nerd Font:size=14:antialias=true:autohint=true",
             "JoyPixels:size=10:antialias=true:autohint=true"
 };
 
@@ -44,4 +43,4 @@ static unsigned int columns    = 0;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static unsigned int border_width = 0;  /* -bw option; to add border width */
+static unsigned int border_width = 2;  /* -bw option; to add border width */
