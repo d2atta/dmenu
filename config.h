@@ -11,24 +11,18 @@ static const char *fonts[] = {
 };
 
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
-/* #include "/home/devildev/.cache/wal/wal-dmenu.h"  // For pywal */
 
-static const char col_soft_black[]  = "#222222";
-static const char col_gray[]  = "#313131";
-static const char col_dirty_white[] = "#e3e3e3";
-static const char col_red[]         = "#d75f5f";
-static const char col_dark_yellow[] = "#f7ca88";
-static const char col_white[]       = "#f5f5f5";
-static const char col_green[]       = "#87af5f";
-static const char col_blue[]        = "#87afd7";
+// theme
+#include "themes/nord.h"
+
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm]    =	 { col_dirty_white,     col_soft_black },   // Normal
-	[SchemeSel]     =	 { col_dirty_white,     col_gray  },   // Selected
-	[SchemeSelHighlight] = { col_green, col_soft_black },
-	[SchemeNormHighlight] = { col_green, col_gray },
-	[SchemeOut] = { col_dirty_white,     col_soft_black },
-	[SchemeMid] = { col_dirty_white,     col_soft_black },
+	[SchemeNorm]    =	 { blue,  gray2 },   // Normal
+	[SchemeSel]     =	 { red,   gray2  },   // Selected
+	[SchemeSelHighlight] = { yellow , gray2 },
+	[SchemeNormHighlight] = { pink, gray2 },
+	[SchemeOut] = { blue,  gray2 },
+	[SchemeMid] = { blue, gray2 },
 };
 
 /* -l and -g options; controls number of lines and columns in grid if > 0 */
