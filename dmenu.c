@@ -31,7 +31,7 @@
 
 /* enums */
 enum { SchemeNorm, SchemeSel, SchemeNormHighlight, SchemeSelHighlight,
-       SchemeOut, SchemeMid,  SchemeLast }; /* color schemes */
+       SchemeOut,  SchemeLast }; /* color schemes */
 
 
 struct item {
@@ -191,8 +191,6 @@ drawitem(struct item *item, int x, int y, int w)
 	int r;
 	if (item == sel)
 		drw_setscheme(drw, scheme[SchemeSel]);
-	else if (item->left == sel || item->right == sel)
-		drw_setscheme(drw, scheme[SchemeMid]);
 	else if (item->out)
 		drw_setscheme(drw, scheme[SchemeOut]);
 	else
@@ -252,7 +250,7 @@ drawmenu(void)
 				item,
 				x + ((i / lines) *  ((mw - x) / columns)) - promptw,
 				y + (((i % lines) + 1) * bh),
-				(mw - x + promptw) / columns
+				(mw - x) / columns
 			);
 	} else if (matches) {
 		/* draw horizontal list */
@@ -581,7 +579,7 @@ keypress(XKeyEvent *ev)
 
 	switch(ksym) {
 	default:
-insert:
+        insert:
 		if (!iscntrl(*buf))
 			insert(buf, len);
 		break;
