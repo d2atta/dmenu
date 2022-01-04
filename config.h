@@ -13,16 +13,26 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 
 // theme
-#include "themes/nord.h"
+// #include "themes/nord.h"
+
+static char color1[] = "#366C93";
+static char color2[] = "#1B9AAD";
+static char color3[] = "#7898B2";
+static char color4[] = "#8C9AB4";
+static char color5[] = "#A6A1B1";
+static char color6[] = "#DFB1B5";
+static char color7[] = "#f5dccf"; // forground
+static char color8[] = "#ab9a90";
+static char gray[]  = "#3B4252";
+static char background[] = "#10111d";
 
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm]    =	 { blue,  gray2 },   // Normal
-	[SchemeSel]     =	 { red,   gray2  },   // Selected
-	[SchemeSelHighlight] = { yellow , gray2 },
-	[SchemeNormHighlight] = { pink, gray2 },
-	[SchemeOut] = { blue,  gray2 },
-	[SchemeMid] = { blue, gray2 },
+	[SchemeNorm]    =	 { gray,  background },   // Normal
+	[SchemeSel]     =	 { color7,   background  },   // Selected
+	[SchemeSelHighlight] = { color2 , background },
+	[SchemeNormHighlight] = { color3, background },
+	[SchemeOut] = { gray,  background },
 };
 
 /* -l and -g options; controls number of lines and columns in grid if > 0 */
@@ -36,5 +46,20 @@ static unsigned int columns    = 0;
  */
 static const char worddelimiters[] = " ";
 
+
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+	{ "color1", STRING, &color1 },
+	{ "color2", STRING, &color2 },
+	{ "color3",  STRING, &color3 },
+	{ "color4",  STRING, &color4 },
+	{ "color5",  STRING, &color5 },
+	{ "color6",  STRING, &color6 },
+	{ "color7",  STRING, &color7 },
+	{ "color8",  STRING, &color8 },
+	{ "background",  STRING, &background },
+};
 /* Size of the window border */
 static unsigned int border_width = 2;  /* -bw option; to add border width */
