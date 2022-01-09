@@ -13,8 +13,6 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 
 // theme
-// #include "themes/nord.h"
-
 static char color1[] = "#366C93";
 static char color2[] = "#1B9AAD";
 static char color3[] = "#7898B2";
